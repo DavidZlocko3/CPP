@@ -224,3 +224,115 @@ int main()
 
 /view.php?id=8
 esp32
+
+
+
+
+
+broj rijeci u renecici, koliko puta se slovo ponavlja u stringu, najveci od 3 broja, broj razlicitih slova u stringu
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int rijeci(char polje[100]){
+    int i=0;
+    int brojac=0;
+    while(polje[i]!='\0'){
+        if(polje[i]<'!'){
+            brojac++;
+        }
+        i++;
+    }
+    return brojac;
+}
+
+int main()
+{
+    char polje[100];
+    gets(polje);
+    cout<<polje;
+    cout<<rijeci(polje);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int rijeci(char polje[100], char trazeni){
+    int i=0;
+    int brojac=0;
+    while(polje[i]!='\0'){
+        if(polje[i]==trazeni){
+            brojac++;
+        }
+        i++;
+    }
+    return brojac;
+}
+
+int main()
+{
+    char polje[100];
+    gets(polje);
+    cout<<"unesite trazeno slovo:"<<endl;
+    char trazeni;
+    cin>>trazeni;
+    cout<<rijeci(polje, trazeni);
+}
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int rijeci(char polje[100]){
+    int brojac=0;
+    int i=0;
+    for(char t='a';t<='z';t++){
+    while(polje[i]!='\0'){
+        if(polje[i]==t){
+            brojac++;
+            break;
+        }
+    i++;
+    }
+}
+    return brojac;
+}
+
+int main(){
+    char polje[100];
+    gets(polje);
+    cout<<rijeci(polje);
+}
+
+
+
+
+Vrati broj ponavljanja slova koje se najviše ponavlja
+mala i velika slova su isto slovo
+
+
+
+
+
+
