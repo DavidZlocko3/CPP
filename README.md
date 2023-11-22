@@ -334,5 +334,5 @@ mala i velika slova su isto slovo
 
 
 
-
+S kojeg polja n elemenata, zavrsava s -1, funkcija, skokovi, najbolje ponavljanje
 
