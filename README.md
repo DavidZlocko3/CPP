@@ -1,4 +1,4 @@
-Selection Sort, , oct u dec, dec u oct, bin u dec, dec u bin, ispise adrese polja od 10 elemenata(int, bool, double, float), ispise broj povecani za 1, ispise polje povecano za 1, parne elemente u polju pretorvori u 0, a neparne u 1... ispisi vrijednosti od svih brojeva u polju, zbroji vrijednosti svih elemenata u polju, vrati duljinu unesene recenice pomocu pointera, sva mala solva pretvori u veliku u nizu
+ispise polje povecano za 1, parne elemente u polju pretorvori u 0, a neparne u 1... ispisi vrijednosti od svih brojeva u polju, zbroji vrijednosti svih elemenata u polju, vrati duljinu unesene recenice pomocu pointera, sva mala solva pretvori u veliku u nizu
 
 pointeri:
 
