@@ -383,4 +383,4 @@ int main()
 
 
 
-
+makne zadnju rijec, dupla zadfnju rijec
