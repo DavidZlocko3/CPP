@@ -85,3 +85,75 @@ int main()
 
 
 makne zadnju rijec, dupla zadfnju rijec
+
+rekurzivno unosi brojeve dok se ne unese 0 i ispisuj ih
+ispise od 0 do n,ispise od n do 0,ispise svaki drugi od 0 do n, vrati zbroj od 0 do n,vrati najveci znak u nizu, ispise niz
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+void rekurzivna(int n, int a){
+    cout<<a<<endl;
+    a++;
+    if(a==n){
+        return;
+    }
+    rekurzivna(n, a);
+}
+
+int main() {
+    int n;
+    int a=0;
+    cin>>n;
+    rekurzivna(n, a);
+}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+void rekurzivna(int n){
+    if(n<0){
+        return;
+    }
+    rekurzivna(n-1);
+        cout<<n<<endl;
+}
+
+int main() {
+    int n;
+    cin>>n;
+    rekurzivna(n);
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int rekurzivna(int n, int*Zb){
+    if(n<0){
+        return *(Zb);
+    }
+    rekurzivna(n-1, Zb);
+    *(Zb)+=n;
+}
+
+int main() {
+    int n;
+    int Zb=0;
+    cin>>n;
+    rekurzivna(n, &Zb);
+    cout<<Zb;
+}
+
+
+
