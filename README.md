@@ -156,4 +156,73 @@ int main() {
 }
 
 
+Od 7 Do n uispise.  od n do 7, 
+
+
+
+#include <iostream>
+
+using namespace std;
+
+void rekurzivna(int n){
+    if(n<7){
+        return;
+    }
+    rekurzivna(n-1);
+        cout<<n<<endl;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    rekurzivna(n);
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+void rekurzivna(int n){
+    if(n<7)
+        return;
+    cout<<n<<endl;
+    rekurzivna(n-1);
+}
+
+int main(){
+    int n;
+    cin>>n;
+    rekurzivna(n);
+}
+
+
+
+
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int rekurzivna(int*polje, int n){
+    if(n<0)
+        return 0;
+    return *polje+rekurzivna(polje+1, n-1);
+}
+
+int main(){
+    srand(time(0));
+    int polje[100];
+    for(int i=0;i<100;i++){
+        polje[i]=rand()%100;
+    }
+    int n;
+    cin>>n;
+    cout<<rekurzivna(polje, n);
+}
 
