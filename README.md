@@ -226,3 +226,4 @@ int main(){
     cout<<rekurzivna(polje, n);
 }
 
+funkcija koja vrati najmanji od N elemenata polja, najveci broj u polju je 1000.
