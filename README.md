@@ -227,3 +227,117 @@ int main(){
 }
 
 funkcija koja vrati najmanji od N elemenata polja, najveci broj u polju je 1000.
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int nb(int*p,int n){
+    if(n==0)
+        return 1000;
+    if(*p<nb(p+1, n-1))
+        return *p;
+    else
+        return nb(p+1, n-1);
+
+}
+
+int main()
+{
+    srand(time(0));
+    int polje[100];
+    int n;
+    cin>>n;
+    for(int i=0;i<100;i++){
+        polje[i]=rand()%1000;
+    }
+    cout<<nb(polje, n);
+}
+funkcija koja vrati broj velikih slova u nizu, vrati razliku velikih i malih slova
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int velika(char*p){
+    if(*p=='\0'){
+        return 0;
+    }
+    if(*p>='A'&&*p<='Z'){
+        return 1+velika(p+1);
+    }
+    return 0;
+
+}
+
+int main()
+{
+    char polje[100]={'\0'};
+    gets(polje);
+    cout<<velika(polje);
+}
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int velika(char*p){
+    if(*p>='A'&&*p<='Z'){
+        return velika(p+1)+1;
+    }
+    else if(*p>='a'&&*p<='z'){
+        return velika(p+1)-1;
+    }
+    if(*p=='\0'){
+        return 0;
+    }
+    return 0;
+
+}
+
+int main()
+{
+    char polje[100]={'\0'};
+    gets(polje);
+    cout<<velika(polje);
+}
+
+Napiši rekurzivnu funkciju koja vrati broj znakova u nizu, zmaeni sa mala z velikima
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int velika(char*p){
+    if(*p=='\0'){
+        return 0;
+    }
+        return velika(p+1)+1;
+
+}
+
+int main()
+{
+    char polje[100]={'\0'};
+    gets(polje);
+    cout<<velika(polje);
+}
+
+infokup zadaci
+
+provjeri je li broj prosti, provjeri sa jednim argumentom
+
+
+
+
