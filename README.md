@@ -338,6 +338,90 @@ infokup zadaci
 
 provjeri je li broj prosti, provjeri sa jednim argumentom
 
+izračuna umnožak korijena prvih n brojeva, vrati
 
 
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+float rekurzivna(int n){
+    float a=sqrt(n);
+    if(n<=1){
+        return a;
+    }
+    return a*rekurzivna(n-1);
+
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<rekurzivna(n);
+}
+
+
+
+Provjeri nalazti li se znak u nizu
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+bool rekurzivna(char*p, char n){
+    if(*p==n){
+        return 1;
+    }
+    else if(*p=='\0'){
+        return 0;
+    }
+    else if(*p!=n){
+        rekurzivna(p+1, n);
+    }
+}
+
+int main()
+{
+    char polje[100]={'\0'};
+    gets(polje);
+    char n;
+    cout<<"Unesi znak: ";
+    cin>>n;
+    cout<<rekurzivna(polje, n);
+}
+
+Vrati prvo pojavljivanje znaka, ako sene nalazi vrati -1
+
+
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int rekurzivna(char*p, char n){
+     if(*p=='\0'){
+        return -1;
+    }
+        if(*p==n){
+        return 1;
+    }
+    int prije =rekurzivna(p+1, n);
+    if(prije>0)
+        return 1+prije;
+}
+
+int main()
+{
+    char polje[100]={'\0'};
+    gets(polje);
+    char n;
+    cout<<"Unesi znak: ";
+    cin>>n;
+    cout<<rekurzivna(polje, n);
+}
 
