@@ -425,3 +425,6 @@ int main()
     cout<<rekurzivna(polje, n);
 }
 
+
+Koje se slovo najviše ponavlja, skokovi
+
