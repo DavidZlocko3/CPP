@@ -86,8 +86,8 @@ int main()
 
 makne zadnju rijec, dupla zadfnju rijec
 
-rekurzivno unosi brojeve dok se ne unese 0 i ispisuj ih
-ispise od 0 do n,ispise od n do 0,ispise svaki drugi od 0 do n, vrati zbroj od 0 do n,vrati najveci znak u nizu, ispise niz
+
+vrati zbroj od 0 do n,vrati najveci znak u nizu, ispise niz
 
 
 
