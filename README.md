@@ -428,3 +428,53 @@ int main()
 
 Koje se slovo najviše ponavlja, skokovi
 
+
+
+
+ne petlje, uvijek rješenje, polje n elemenata, prvi i posljedni 0, vrati na kojem je indeksu zbroj lijevih i desnih brojeva jednak
+Vrati zbrojsvih indeksi na kojima je lijevo = desno, ako vrijednosti ne postoje vrati 0, polje je ograničeno nulama
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int zbrojvise(int*p){
+    if(*p==0){
+        return 0;
+    }
+    return *p+zbrojvise(p+1);
+
+}
+
+int zbrojmanje(int*p){
+    if(*p==0){
+        return 0;
+    }
+    return *p+zbrojmanje(p-1);
+}
+
+int rekurzivna(int*p){
+    if(*p==0){
+        return -1;
+    }
+    if(zbrojvise(p)==zbrojmanje(p)){
+        return 1;
+    }
+    int rezultat=rekurzivna(p+1);
+    if(rezultat<0){
+        return -1;
+    }
+    return 1+rezultat;
+
+}
+
+int main()
+{
+    int polje[100]={-1, 1, 2, 3, 4, 9, -7, -4};
+    cout<<rekurzivna(polje);
+}
