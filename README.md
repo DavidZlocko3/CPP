@@ -241,3 +241,74 @@ int main()
 }
 
 
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct cvor{
+    int ID;
+    int cijena;
+    cvor *L=NULL;
+    cvor *D=NULL;
+};
+
+int rek(cvor*trenutni, cvor*zavrsni){
+    if(zavrsni==trenutni)
+        return (*trenutni).cijena;
+    int cijenaD=0;
+    int cijenaL=0;
+    if((*trenutni).D !=NULL)
+        cijenaD=rek((*trenutni).D, zavrsni);
+    if((*trenutni).L !=NULL)
+        cijenaL=rek((*trenutni).L, zavrsni);
+    if(cijenaD==0&&cijenaL==0){
+        return -1;
+    }
+    if(cijenaD>cijenaL){
+        return (*trenutni).cijena+cijenaD;
+    }
+    else{
+        return (*trenutni).cijena+cijenaL;
+    }
+
+
+}
+
+int main()
+{
+    cvor c1, c2, c3, c4, c5, c6, c7;
+    c1.ID=1;
+    c2.ID=2;
+    c3.ID=3;
+    c4.ID=4;
+    c5.ID=5;
+    c6.ID=6;
+    c7.ID=7;
+    c1.L=&c2;
+    c1.D=&c3;
+    c2.L=&c5;
+    c2.D=&c4;
+    c3.L=&c4;
+    c3.D=&c6;
+    c4.L=&c5;
+    c4.D=&c6;
+    c5.D=&c7;
+    c6.L=&c7;
+    c1.cijena=3;
+    c2.cijena=7;
+    c3.cijena=2;
+    c4.cijena=12;
+    c5.cijena=24;
+    c6.cijena=18;
+    c7.cijena=1;
+    cout<<rek(&c1, &c7);
+}
+
+
+
