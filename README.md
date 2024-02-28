@@ -308,7 +308,6 @@ int main()
     c6.cijena=18;
     c7.cijena=1;
     cout<<rek(&c1, &c7);
-}
 
 
 
