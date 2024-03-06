@@ -310,4 +310,48 @@ int main()
     cout<<rek(&c1, &c7);
 
 
+https://esolangs.org/wiki/Emoji-gramming
+
+
+Set🕐 to 0
+Set🕐 to 🕐 minus🕐
+Set🕑 to🕐
+Set🕑 to🕑 minus🕑
+Set🕒 to🕑
+Set🕒 to🕒 minus🕑
+Set♓ to🕒
+Set♓ to ♓ minus 2
+Set♓ to ♓ minus 1
+Set📢 to♓
+Set♓ to ♓ minus 🕑
+Set♓ to ♓ minus 1
+Set📢 to♓
+😈♓🕐
+Set♓ to ♓ minus 2
+Set📢 to♓
+😈♓🕐
+😈♓4
+Set📢 to♓
+😈♓2
+Set📢 to♓
+Set♓ to ♓ minus 2
+Set📢 to♓
+Set📢 to♓
+Set♓ to ♓ minus 🕑
+Set♓ to ♓ minus 8
+Set♓ to ♓ minus 1
+Set📢 to♓
+😈♓🕑
+😈♓8
+😈♓2
+😈♓1
+Set📢 to♓
+Set♓ to ♓ minus 2
+Set📢 to♓
+Set♓ to ♓ minus 1
+Set📢 to♓
+Set♓ to ♓ minus 4
+Set📢 to♓
+😈♓4
+Set📢 to♓
 
