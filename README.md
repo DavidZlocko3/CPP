@@ -355,3 +355,83 @@ Set📢 to♓
 😈♓4
 Set📢 to♓
 
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct osoba{
+    int ID;
+    char spol;
+    osoba *L=NULL;
+    osoba *D=NULL;
+};
+
+int rek(osoba*trenutni){
+    if((*trenutni).spol=='M')
+            return 1;
+    else
+            return 0;
+    int levo=0;
+    int desno=0;
+    if((*trenutni).L!=NULL){
+        levo=rek((*trenutni).L);
+    }
+    if((*trenutni).D!=NULL){
+        desno=rek((*trenutni).D);
+    }
+    if((*trenutni).spol=='M'){
+        return 1+levo+desno;
+    }
+    else
+        return 0+levo+desno;
+}
+
+int main()
+{
+    osoba o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11;
+    o1.ID=1;
+    o2.ID=2;
+    o2.ID=3;
+    o2.ID=4;
+    o2.ID=5;
+    o2.ID=6;
+    o2.ID=7;
+    o2.ID=8;
+    o2.ID=9;
+    o2.ID=10;
+    o2.ID=11;
+    o1.L=&o2;
+    o1.D=&o3;
+    o2.L=&o5;
+    o2.D=&o6;
+    o3.L=&o6;
+    o3.D=&o7;
+    o4.D=&o8;
+    o5.L=&o9;
+    o6.L=&o10;
+    o6.D=&o11;
+    o7.L=&o11;
+    o7.D=&o4;
+    o1.spol='M';
+    o2.spol='Z';
+    o3.spol='Z';
+    o4.spol='Z';
+    o5.spol='M';
+    o6.spol='Z';
+    o7.spol='Z';
+    o8.spol='M';
+    o9.spol='M';
+    o10.spol='M';
+    o11.spol='M';
+    cout<<rek(&o1);
+
+
