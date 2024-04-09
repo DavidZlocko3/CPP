@@ -435,3 +435,184 @@ int main()
     cout<<rek(&o1);
 
 
+
+    Ime, prezime, god rođenja struktura cina se nutra I ISPISE JEDNOM
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct Osoba{
+    string ime;
+    string prezime;
+    int godrod;
+};
+
+void ispis(Osoba osoba){
+    cout<<"Ime osobe je: "<<osoba.ime<<endl;
+    cout<<"Prezime osobe je: "<<osoba.prezime<<endl;
+    cout<<"Osoba je rođena godine: "<<osoba.godrod<<endl;
+    return;
+}
+
+int main()
+{
+    Osoba osoba;
+    cin>>osoba.ime>>osoba.prezime>>osoba.godrod;
+    ispis(osoba);
+}
+
+
+
+
+
+
+
+
+
+Vrati ime i prezime od starije osobe
+
+
+#include <iostream>
+
+using namespace std;
+
+struct Osoba{
+    string ime;
+    string prezime;
+    int godrod;
+};
+
+void ispis(Osoba osoba){
+    cout<<"Ime osobe je: "<<osoba.ime<<endl;
+    cout<<"Prezime osobe je: "<<osoba.prezime<<endl;
+    cout<<"Osoba je rođena godine: "<<osoba.godrod<<endl;
+    return;
+}
+
+Osoba starija(Osoba osoba, Osoba osoba2){
+    if(osoba.godrod>osoba2.godrod){
+        return osoba;
+    }
+    else{
+        return osoba2;
+    }
+}
+
+int main()
+{
+    Osoba osoba, osoba2;
+    cin>>osoba.ime>>osoba.prezime>>osoba.godrod;
+    cin>>osoba2.ime>>osoba2.prezime>>osoba2.godrod;
+    ispis(starija(osoba, osoba2));
+    return 0;
+}
+
+
+
+
+1 ako je prva osoba starija 0 ako su jednako stare, -1 ako je prva mlađa
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct Osoba{
+    string ime;
+    string prezime;
+    int godrod;
+};
+
+void ispis(Osoba osoba){
+    cout<<"Ime osobe je: "<<osoba.ime<<endl;
+    cout<<"Prezime osobe je: "<<osoba.prezime<<endl;
+    cout<<"Osoba je rođena godine: "<<osoba.godrod<<endl;
+    return;
+}
+
+Osoba starija(Osoba osoba, Osoba osoba2){
+    if(osoba.godrod>osoba2.godrod){
+        return osoba;
+    }
+    else{
+        return osoba2;
+    }
+}
+
+int odnos(Osoba osoba, Osoba osoba2){
+    if(osoba.godrod>osoba2.godrod){
+        return -1;
+    }
+    else if(osoba.godrod==osoba2.godrod){
+        return 0;
+    }
+    else{
+        return 1;
+    }
+
+}
+
+int main()
+{
+    Osoba osoba, osoba2;
+    cin>>osoba.ime>>osoba.prezime>>osoba.godrod;
+    cin>>osoba2.ime>>osoba2.prezime>>osoba2.godrod;
+    cout<<odnos(osoba, osoba2);
+    cout<<endl;
+    ispis(starija(osoba, osoba2));
+    return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct Osoba{
+    string ime;
+    string prezime;
+    int godrod;
+};
+
+
+int main()
+{
+    Osoba osoba[5];
+    for(int i=0;i<5;i++){
+        cin>>osoba[i].ime;
+        cin>>osoba[i].prezime;
+        cin>>osoba[i].godrod;
+    }
+        for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(osoba[j].godrod>osoba[j+1].godrod){
+               swap(osoba[j].ime, osoba[j+1].ime);
+               swap(osoba[j].prezime, osoba[j+1].prezime);
+               swap(osoba[j].godrod, osoba[j+1].godrod);
+            }
+        }
+    }
+    for(int i=0;i<5;i++){
+        cout<<osoba[i].ime<<"  "<<osoba[i].prezime<<"  "<<osoba[i].godrod<<endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
