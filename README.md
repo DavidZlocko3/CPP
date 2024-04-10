@@ -669,7 +669,74 @@ int main()
 
 
 
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+struct Osoba{
+    string ime;
+    string prezime;
+    int godrod;
+    string mjesto;
+    string ulica;
+    int kucni_broj;
+};
+
+
+int main()
+{
+    Osoba osoba[5];
+    for(int i=0;i<5;i++){
+        cin>>osoba[i].ime;
+        cin>>osoba[i].prezime;
+        cin>>osoba[i].godrod;
+        cin>>osoba[i].mjesto;
+        cin>>osoba[i].ulica;
+        cin>>osoba[i].kucni_broj;
+    }
+        for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(osoba[j].ulica==osoba[j+1].ulica){
+                if(osoba[j].kucni_broj<osoba[j+1].kucni_broj){
+                    swap(osoba[j].ime, osoba[j+1].ime);
+                    swap(osoba[j].prezime, osoba[j+1].prezime);
+                    swap(osoba[j].godrod, osoba[j+1].godrod);
+                    swap(osoba[j].mjesto, osoba[j+1].mjesto);
+                    swap(osoba[j].ulica, osoba[j+1].ulica);
+                    swap(osoba[j].kucni_broj, osoba[j+1].kucni_broj);
+                }
+            }
+            else if(osoba[j].ulica<osoba[j+1].ulica){
+               swap(osoba[j].ime, osoba[j+1].ime);
+               swap(osoba[j].prezime, osoba[j+1].prezime);
+               swap(osoba[j].godrod, osoba[j+1].godrod);
+               swap(osoba[j].mjesto, osoba[j+1].mjesto);
+               swap(osoba[j].ulica, osoba[j+1].ulica);
+               swap(osoba[j].kucni_broj, osoba[j+1].kucni_broj);
+            }
+        }
+    }
+    cout<<endl<<endl;
+    for(int i=0;i<5;i++){
+        cout<<osoba[i].ime<<"  "<<osoba[i].prezime<<"  "<<osoba[i].godrod<<"  "<<osoba[i].mjesto<<"  "<<osoba[i].ulica<<"  "<<osoba[i].kucni_broj<<endl;
+    }
+    cout<<endl<<endl;
+    while(1){
+        string unos;
+        cin>>unos;
+        for(int i=0;i<5;i++){
+            if(((osoba[i].ulica).find(unos))!= std::string::npos){
+                cout<<osoba[i].ime<<"  "<<osoba[i].prezime<<"  "<<osoba[i].godrod<<"  "<<osoba[i].mjesto<<"  "<<osoba[i].ulica<<"  "<<osoba[i].kucni_broj<<endl;
+            }
+        }
+        if(unos=="izlaz"){
+            break;
+        }
+    }
+
+
+}
 
 
 
