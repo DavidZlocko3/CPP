@@ -739,15 +739,43 @@ int main()
 }
 
 
+Struktura Vozilo(Proizvođačm, Model, Godina Proizvodnje, Snaga) Funkcija Lijepo ispiše sve parametre nekog vozuila
+Smanji snagu nekog vozila za 1, ako se može smanjiti vrati 1 inače vrati 0, Varijabla koja predstavlja vozilo je deklarirana u mainu
+Napisi program koji od korisnika trazi unos vozila. Unesena vozila spremamo u polje, nećebiti više od 10 vozila
+napiši strukturu koja predstavlja čvor koji potencijalno ima 3 podčvpra. Napiši funkciju koja vrati koliko ima čvorova u nekom stable. Čvorovi mogu prikazivati na prijašnje čvorove
+
+Struktura Osobe(Naselje, Ulica Kucni broj) Lijepo ispiši sve podatke neke osobe
+Napiši funkciju koja neku osobu preseli na X kućnih brojeva bliže- Vrati 1 ako je uspješno, inače vrati 0
+Napiši funkciju koja od korisnika tražio unos osobei adrese. Unesene osobe se spremaju u polje od najviše 10 osoba
+Kreiraj strukturu koja predstavlja čvor koji potencijalno ima 100 podčvorova. Napiši funkciju koja vrati koliko čvorova ima u cijelom stablu
 
 
 
 
 
 
+#include <iostream>
+#include <string>
 
+using namespace std;
 
+struct vozilo{
+    string proizvodac;
+    string model;
+    int god_proizvodnje;
+    int snaga;
+};
 
+vozilo ispise(char trazeni, vozilo ){
+    cout<<"Proizvodac je: "<<trazeni.proizvodac<<endl;
+    cout<<"Model vozila je: "<<trazeni.model<<endl;
+    cout<<"Godina proizvodnje vozila je: "<<trazeni.god_proizvodnje<<endl;
+    cout<<"Snaga je: "<<trazeni.snaga<<endl;
+}
 
+int main(){
+    vozilo a;
+    cin>>a.proizvodac>>a.model>>a.god_proizvodnje>>a.snaga;
+    ispise(trazeni);
 
-
+}
