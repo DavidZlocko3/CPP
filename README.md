@@ -150,3 +150,100 @@ int main()
 
 napiši strukturu koja predstavlja čvor koji potencijalno ima 3 podčvpra. Napiši funkciju koja vrati koliko ima čvorova u nekom stable. Čvorovi mogu prikazivati na prijašnje čvorove
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <stdio.h>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    FILE*datoteka;
+    datoteka = fopen("kalkulator.txt","w+");
+    int a, b, c;
+    cin>>a>>b>>c;
+    fprintf(datoteka, "%d+%d=%d", a, b, c);
+    while(fscanf(datoteka, "%d+%d=%d", &a, &b, &c)!=EOF){
+        cout<<a<<" "<<b;
+    }
+    return 0;
+
+}
+
+
+
+#include <iostream>
+#include <stdio.h>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    FILE*datoteka;
+    datoteka = fopen("kalkulator.txt","w+");
+    int a, b;
+    cin>>a>>b;
+    fprintf(datoteka, "%d+%d=%d", a, b, a+b);
+
+    FILE*cita;
+    cita=fopen("kalkulator.txt", "r");
+    while(fscanf(datoteka, "%d+%d=%d", &a, &b, a+b)!=EOF){
+            cout<<a<<"+"<<b<<"="<<a+b<<endl;
+    }
+    fclose(datoteka);
+    fclose(cita);
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <stdio.h>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    FILE*datoteka;
+    datoteka = fopen("kalkulator.txt","w+");
+    int a, b, c;
+    cin>>a>>b;
+    c=a+b;
+    fprintf(datoteka, "%i + %i = %i", a, b, c);
+    fclose(datoteka);
+    return 0;
+
+}
+
+
+
+
+
+
+
+
+
