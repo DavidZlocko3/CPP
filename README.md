@@ -245,5 +245,135 @@ int main()
 
 
 
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    int brojac=0;
+    FILE*datoteka;
+    datoteka = fopen("dokument.txt", "r");
+    int a;
+    int b;
+    int c;
+    while(fscanf(datoteka, "%d %d %d", &a, &b, &c) !=EOF){
+        if(a+b==c){
+            brojac++;
+        }
+    }
+    cout<<brojac;
+}
+
+
+
+
+
+fcl
+
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    int brojac=0;
+    FILE*datoteka;
+    datoteka = fopen("dokument.txt", "r");
+    int a;
+    int b;
+    int c;
+    int i=0;
+    int brojevi[500][3];
+    char istina[500];
+    while(fscanf(datoteka, "%d %d %d", &a, &b, &c) !=EOF){
+        if(a+b==c){
+            brojac++;
+            istina[i]='T';
+
+        }
+        else{
+            istina[i]='N';
+        }
+        brojevi[i][0]=a;
+        brojevi[i][1]=b;
+        brojevi[i][2]=c;
+
+        i++;
+    }
+    cout<<brojac;
+    fclose(datoteka);
+    FILE*datoteka2;
+    datoteka2 = fopen("dokument.txt", "w+");
+    for(int i=0;i<500;i++){
+        fprintf(datoteka, "%d %d %d %c \n", brojevi[i][0], brojevi[i][1], brojevi[i][2], istina[i]);
+    }
+    fclose(datoteka2);
+}
+
+
+
+
+
+
+
+#include <iostream>
+#include <time.h>
+
+using namespace std;
+
+struct redak{
+    int prvi;
+    int drugi;
+    int rjesenje;
+    char znak;
+};
+
+int main()
+{
+    FILE*datoteka;
+    datoteka = fopen("dokument.txt", "r");
+    redak redak[10];
+    for(int i=0;i<10;i++){
+        fscanf(datoteka, "%d %c %d", &redak[i].prvi, &redak[i].znak , &redak[i].drugi);
+        if(redak[i].znak=='-'){
+            redak[i].rjesenje=redak[i].prvi-redak[i].drugi;
+        }
+        else if(redak[i].znak=='+'){
+            redak[i].rjesenje=redak[i].prvi+redak[i].drugi;
+        }
+        else if(redak[i].znak=='*'){
+            redak[i].rjesenje=redak[i].prvi*redak[i].drugi;
+        }
+        else if(redak[i].znak=='/'){
+            redak[i].rjesenje=redak[i].prvi/redak[i].drugi;
+        }
+    }
+    fclose(datoteka);
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            if(redak[j].rjesenje<redak[j+1].rjesenje){
+                swap(redak[j].prvi, redak[j+1].prvi);
+                swap(redak[j].drugi, redak[j+1].drugi);
+                swap(redak[j].znak, redak[j+1].znak);
+                swap(redak[j].rjesenje, redak[j+1].rjesenje);
+            }
+        }
+    }
+
+
+    FILE*datoteka2;
+    datoteka2 = fopen("dokument.txt", "w+");
+        for(int i=0;i<10;i++){
+        fprintf(datoteka2, "%d %c %d = %d \n", redak[i].prvi, redak[i].znak , redak[i].drugi, redak[i].rjesenje);
+        }
+}
+
+
 
 
