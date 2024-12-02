@@ -488,3 +488,115 @@ namespace David1212
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace AAAAA
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string Direktorij = @"C:\Users\ucenik\Documents\3.RT\GUI\AAAAA\AAAAA\bin";
+
+                string[] directories = Directory.GetDirectories(Direktorij);
+                foreach (string directory in directories)
+                {
+                    string directoryName = Path.GetFileName(directory);
+                    lB_1.Items.Add(directoryName);
+                }
+        }
+
+        private void b_mapa_Click(object sender, EventArgs e)
+        {
+            string Direktorij = @"C:\Users\ucenik\Documents\3.RT\GUI\AAAAA\AAAAA\bin";
+            string fullPath = Path.Combine(Direktorij, tB_mapa.Text);
+
+            try
+            {
+                Directory.CreateDirectory(fullPath);
+                lB_1.Items.Add(tB_mapa.Text);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error creating directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void b_dat_Click(object sender, EventArgs e)
+        {
+            string Direktorij = @"C:\Users\ucenik\Documents\3.RT\GUI\AAAAA\AAAAA\bin";
+            string fullPath = Path.Combine(Direktorij, tB_mapa.Text);
+
+            try
+            {
+                Directory.Delete(fullPath);
+                lB_1.Items.Remove(tB_dat.Text);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error creating directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void b_pr_Click(object sender, EventArgs e)
+        {
+            string Direktorij = @"C:\Users\ucenik\Documents\3.RT\GUI\AAAAA\AAAAA\bin";
+            string fullPath1 = Path.Combine(Direktorij, tB_pr1.Text);
+            string Direktorij2 = @"C:\Users\ucenik\Documents\3.RT\GUI\AAAAA\AAAAA\bin\";
+            string fullPath2 = Path.Combine(Direktorij2, tB_pr2.Text);
+            
+            try
+            {
+                Directory.Move(fullPath1,fullPath2);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error creating directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tB_pr2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lB_1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
+
+
+
+
